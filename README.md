@@ -107,10 +107,12 @@ Q: বিয়ের সময় কল্যাণীর প্রকৃত �
 ## 📌 Environment Variables (`.env`)
 
 ```env
+GOOGLE_API_KEY=Your Gemini api key
 QDRANT_URL=https://your-qdrant-url
 QDRANT_API_KEY=your-qdrant-key
 QDRANT_COLLECTION=hsc26_bangla
 PDF_FILE=HSC26-Bangla1st-Paper.pdf
+
 ```
 
 ---
