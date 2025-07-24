@@ -51,7 +51,7 @@ for page_img in convert_from_path(
     texts.append(clean(ocr_pil(page_img)))
 
 full_text = "\n".join(texts)
-print(f"✅ OCR complete – {len(full_text):,} characters extracted.")
+print(f" OCR complete – {len(full_text):,} characters extracted.")
 
 # ── 3. chunk & preview ────────────────────────────────────────────────────────
 splitter = RecursiveCharacterTextSplitter(
@@ -60,22 +60,22 @@ splitter = RecursiveCharacterTextSplitter(
 )
 docs = splitter.create_documents([full_text])
 
-print("\n🔎  Preview first 3 chunks:")
+print("\n  Preview first 3 chunks:")
 for d in docs[:3]:
     print("—", textwrap.shorten(d.page_content, 200, placeholder=" …"))
 
 if input("\nLooks good?  type YES to upload 👉 ").lower() != "yes":
-    raise SystemExit("⏹️  Aborted – OCR needs tweaking.")
+    raise SystemExit("  Aborted – OCR needs tweaking.")
 
 # ── 4. embed & upload to Qdrant ───────────────────────────────────────────────
 print("🔗 Embedding with Gemini …")
 emb = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
-print("💾 Connecting to Qdrant …")
+print(" Connecting to Qdrant …")
 client = QdrantClient(url=QDRANT_URL, api_key=QDRANT_KEY)
 
 if client.collection_exists(COLLECTION):
-    print("🗑️  Deleting old collection …")
+    print("  Deleting old collection …")
     client.delete_collection(COLLECTION)
 
 client.create_collection(
@@ -87,11 +87,11 @@ ids      = [str(uuid.uuid4()) for _ in docs]
 vectors  = [emb.embed_query(d.page_content) for d in docs]
 payloads = [{"text": d.page_content} for d in docs]
 
-print(f"⬆️  Uploading {len(ids)} vectors …")
+print(f"  Uploading {len(ids)} vectors …")
 client.upload_collection(
     collection_name=COLLECTION,
     vectors=vectors,
     payload=payloads,
     ids=ids,
 )
-print(f"✅ Uploaded {len(ids)} vectors to '{COLLECTION}'")
+print(f" Uploaded {len(ids)} vectors to '{COLLECTION}'")
