@@ -1,6 +1,6 @@
 # 📚 Bangla–English RAG System (HSC26 1st Paper)
 
-A simple but powerful Retrieval-Augmented Generation (RAG) system that answers Bengali and English queries grounded in the *HSC26 Bangla 1st Paper* textbook using OCR, Gemini embeddings, Qdrant vector store, and a hybrid retrieval strategy (vector + BM25). Designed for AI/ML interviews and technical assessment.
+A simple but powerful Retrieval-Augmented Generation (RAG) system that answers Bengali and English queries grounded in the *HSC26 Bangla 1st Paper* textbook using OCR, Gemini embeddings, Qdrant vector store, and a hybrid retrieval strategy (vector + BM25). 
 
 > ⚡ No GPU required – everything runs on CPU and APIs (Gemini + Qdrant Cloud)
 
