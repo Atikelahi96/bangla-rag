@@ -74,7 +74,7 @@ Q: বিয়ের সময় কল্যাণীর প্রকৃত �
 
 ### 1. **Text Extraction**
 - **Tool:** `pdf2image` + `pytesseract` (with OpenCV pre-thresholding)
-- **Why:** The original PDF was image-based (scanned textbook), so OCR was required. Bengali script support with `lang="ben+eng"` improves fidelity.
+- **Why:** The original PDF was image-based (scanned textbook information), so OCR was required. Bengali script support with `lang="ben+eng"` improves fidelity.
 - **Challenges:** Minor OCR noise and spacing issues, fixed using regex-based cleanup.
 
 ### 2. **Chunking Strategy**
