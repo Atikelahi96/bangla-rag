@@ -127,4 +127,4 @@ async def ask(payload: AskRequest):
 
 @app.get("/")
 def root():
-    return {"status": "ok", "message": "Bangla RAG hybrid ready 🚀"}
+    return {"status": "ok", "message": "Bangla RAG hybrid ready "}
