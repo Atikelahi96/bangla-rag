@@ -10,7 +10,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from qdrant_client import QdrantClient
 
-# 🔧 tell the wrapper exactly where tesseract.exe is
+#  tell the wrapper exactly where tesseract.exe is
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 # ──────────────────────────────────────────────────────────────────────────────
 
